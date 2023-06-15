@@ -11,6 +11,9 @@
 <title>Inicio</title>
 </head>
 <body class="container">
+<header>
+	<jsp:include page="Menu.jsp"></jsp:include>
+</header>
 <h1>Inicio</h1>
 <ul>
 	<li><a href="ContactoServlet">Contacto</a></li>

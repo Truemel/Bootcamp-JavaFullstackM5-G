@@ -11,6 +11,9 @@
 <title>Contacto</title>
 </head>
 <body class="container">
+<header>
+	<jsp:include page="Menu.jsp"></jsp:include>
+</header>
 <form action="submit">
 <div class="mb-3 mt-3">
     <label for="email" class="form-label">Email:</label>

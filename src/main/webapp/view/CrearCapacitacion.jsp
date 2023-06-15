@@ -11,6 +11,9 @@
 <title>Crear Capacitación</title>
 </head>
 <body class="container">
+<header>
+	<jsp:include page="Menu.jsp"></jsp:include>
+</header>
 <form action="submit">
 <div class="mb-3">
     <label for="nom" class="form-label">Nombre capacitación:</label>
