@@ -12,6 +12,9 @@
         <a class="nav-link active" aria-current="page" href="InicioServlet">Inicio</a>
         <a class="nav-link" href="ContactoServlet">Contacto</a>
         <a class="nav-link" href="CrearCapacitacionServlet">Crear Capacitación</a>
+        <a class="nav-link" href="ListarCapacitacionServlet">Listar Capacitaciones</a>
+        <a class="nav-link" href="LoginServlet">Login</a>
+        <a class="nav-link" href="#">Logout</a>
       </div>
     </div>
   </div>

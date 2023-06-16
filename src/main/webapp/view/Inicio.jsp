@@ -15,9 +15,6 @@
 	<jsp:include page="Menu.jsp"></jsp:include>
 </header>
 <h1>Inicio</h1>
-<ul>
-	<li><a href="ContactoServlet">Contacto</a></li>
-	<li><a href="CrearCapacitacionServlet">Crear Capacitación</a></li>
-</ul>
+<p>Bienvenido al sitio, aquí asesoramos sus prevenciones de riesgos</p>
 </body>
 </html>
