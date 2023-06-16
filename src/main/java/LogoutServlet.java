@@ -38,7 +38,7 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("InicioServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/LoginServlet").forward(request, response);
 	}
 
 }

@@ -14,7 +14,7 @@
         <a class="nav-link" href="CrearCapacitacionServlet">Crear Capacitación</a>
         <a class="nav-link" href="ListarCapacitacionServlet">Listar Capacitaciones</a>
         <a class="nav-link" href="LoginServlet">Login</a>
-        <a class="nav-link" href="#">Logout</a>
+        <a class="nav-link" href="LogoutServlet">Logout</a>
       </div>
     </div>
   </div>
