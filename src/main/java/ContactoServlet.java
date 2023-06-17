@@ -1,11 +1,12 @@
 
 
+import java.io.IOException;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class S2
@@ -26,7 +27,11 @@ public class ContactoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/view/Contacto.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+		if(Boolean.parseBoolean(session.getAttribute("logged")+""))
+			getServletContext().getRequestDispatcher("/view/Contacto.jsp").forward(request, response);
+		else
+			getServletContext().getRequestDispatcher("/LoginServlet").forward(request, response);
 	}
 
 	/**

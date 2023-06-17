@@ -14,9 +14,6 @@
 <header>
 	<jsp:include page="Menu.jsp"></jsp:include>
 </header>
-
-<form method="post" action="LogoutServlet" class="form"><button class="btn btn-primary">Logout</button>
-</form>
-
+<a href="LoginServlet"><button class="btn btn-primary">Logout</button></a>
 </body>
 </html>
