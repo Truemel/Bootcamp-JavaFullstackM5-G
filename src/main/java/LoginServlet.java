@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(UserSession.loginVerify(request.getParameter("nickname"), request.getParameter("password"))) {
 			session.setAttribute("logged", true);
-			getServletContext().getRequestDispatcher("/ContactoServlet").forward(request, response);
+			response.sendRedirect(getServletContext().getContextPath()+"/ContactoServlet");
 		}else
 			getServletContext().getRequestDispatcher("/view/Login.jsp").forward(request, response);
 	}

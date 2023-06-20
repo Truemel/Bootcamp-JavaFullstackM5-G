@@ -31,7 +31,7 @@ public class ListarCapacitacionServlet extends HttpServlet {
 		if(Boolean.parseBoolean(session.getAttribute("logged")+""))
 			getServletContext().getRequestDispatcher("/view/ListarCapacitacion.jsp").forward(request, response);
 		else
-			getServletContext().getRequestDispatcher("/LoginServlet").forward(request, response);
+			response.sendRedirect(getServletContext().getContextPath()+"/LoginServlet");
 	}
 
 	/**

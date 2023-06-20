@@ -31,7 +31,7 @@ public class ContactoServlet extends HttpServlet {
 		if(Boolean.parseBoolean(session.getAttribute("logged")+""))
 			getServletContext().getRequestDispatcher("/view/Contacto.jsp").forward(request, response);
 		else
-			getServletContext().getRequestDispatcher("/LoginServlet").forward(request, response);
+			response.sendRedirect("./LoginServlet");
 	}
 
 	/**

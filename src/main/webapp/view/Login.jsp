@@ -12,7 +12,7 @@
 </head>
 <body class="container">
 <header><a class="mb-3" href="InicioServlet">Volver al Inicio</a></header>
-<form action="login" method="post" class="form">
+<form action="LoginServlet" method="post" class="form">
 	<div class="rows">
 		<label class="form-label" for="nick">Nombre de Usuario</label>
 		<input id="nick" name="nickname" type="text" placeholder="Nombre de Usuario" class="form-control">
