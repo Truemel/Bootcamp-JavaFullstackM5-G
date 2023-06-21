@@ -11,6 +11,8 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="InicioServlet">Inicio</a>
         <a class="nav-link" href="ContactoServlet">Contacto</a>
+        <a class="nav-link" href="CrearUsuarioServlet">Crear Usuario</a>
+        <a class="nav-link" href="ListarUsuarioServlet">Listar Usuarios</a>
         <a class="nav-link" href="CrearCapacitacionServlet">Crear Capacitación</a>
         <a class="nav-link" href="ListarCapacitacionServlet">Listar Capacitaciones</a>
         <a class="nav-link" href="LoginServlet">Login</a>
