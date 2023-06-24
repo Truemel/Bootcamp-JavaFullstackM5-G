@@ -8,7 +8,7 @@ import extras.GlobalConstants;
 
 public class ConnectionClient {
 	
-	private Connection client = null;
+	private static Connection client = null;
 	
 	private ConnectionClient() {
 		try {
@@ -20,7 +20,7 @@ public class ConnectionClient {
 		}
 	}
 
-	public Connection getClient() {
+	public static Connection getClient() {
 		if(client == null)
 			new ConnectionClient();
 		return client;
