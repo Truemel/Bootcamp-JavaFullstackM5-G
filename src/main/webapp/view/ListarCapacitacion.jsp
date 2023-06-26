@@ -28,9 +28,9 @@
 		<tbody>
 			<f:forEach var="c" items="${capac}">
 				<tr>
-					<td><f:out value="c.getId()"></f:out></td>
-					<td><f:out value="c.getNombre()"></f:out></td>
-					<td><f:out value="c.getDetalle()"></f:out></td>
+					<td><f:out value="${c.getId()}"></f:out></td>
+					<td><f:out value="${c.getNombre()}"></f:out></td>
+					<td><f:out value="${c.getDetalle()}"></f:out></td>
 				</tr>
 			</f:forEach>
 		</tbody>

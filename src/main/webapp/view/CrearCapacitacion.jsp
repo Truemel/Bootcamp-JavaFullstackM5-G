@@ -20,7 +20,7 @@
     <input type="text" class="form-control" id="nom" placeholder="Nombre" name="nombre">
 </div>
 <div class="mb-3">
-    <label for="det" class="form-label">Duración:</label>
+    <label for="det" class="form-label">Detalle:</label>
     <textarea rows="20" cols="100" class="form-control" id="det" placeholder="Detalle" name="detalle"></textarea>
 </div>
 <div class="rows">

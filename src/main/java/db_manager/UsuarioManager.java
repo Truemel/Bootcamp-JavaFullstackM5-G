@@ -18,7 +18,7 @@ public class UsuarioManager implements UsuarioDAO {
 		try {
 			ResultSet result = conCli.createStatement().executeQuery("SELECT * FROM usuarios");
 			while(result.next()) {
-				lista.add(new Usuario(result.getInt("id"), result.getString("nombre"), Tipo.valueOf(result.getString("tipo"))));
+				lista.add(new Usuario(result.getInt("id"), result.getString("nombre"), Tipo.valueOf(result.getString("tipo").toUpperCase())));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -34,7 +34,7 @@ public class UsuarioManager implements UsuarioDAO {
 		try {
 			ResultSet result = conCli.createStatement().executeQuery("SELECT * FROM usuarios WHERE id = "+id);
 			while(result.next()) {
-				user = new Usuario(result.getInt("id"), result.getString("nombre"), Tipo.valueOf(result.getString("tipo")));
+				user = new Usuario(result.getInt("id"), result.getString("nombre"), Tipo.valueOf(result.getString("tipo").toUpperCase()));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

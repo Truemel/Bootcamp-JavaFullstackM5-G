@@ -45,7 +45,7 @@ public class Usuario {
 	}
 	
 	public void setTipo(String tipo) {
-		this.tipo = Tipo.valueOf(tipo);
+		this.tipo = Tipo.valueOf(tipo.toUpperCase());
 	}
 
 	@Override

@@ -28,9 +28,9 @@
 		<tbody>
 			<f:forEach var="u" items="${user}">
 				<tr>
-					<td><f:out value="u.getId()"></f:out></td>
-					<td><f:out value="u.getNombre()"></f:out></td>
-					<td><f:out value="u.getTipo()"></f:out></td>
+					<td><f:out value="${u.getId()}"></f:out></td>
+					<td><f:out value="${u.getNombre()}"></f:out></td>
+					<td><f:out value="${u.getTipo()}"></f:out></td>
 				</tr>
 			</f:forEach>
 		</tbody>

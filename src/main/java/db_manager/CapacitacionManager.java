@@ -17,7 +17,7 @@ public class CapacitacionManager implements CapacitacionDAO {
 		Connection conCli = ConnectionClient.getClient();
 		try {
 			Statement state = conCli.createStatement();
-			ResultSet result = state.executeQuery("SELECT id, nombre, detalle from capacitacion");
+			ResultSet result = state.executeQuery("SELECT id, nombre, detalle from capacitaciones");
 			while(result.next()) {
 				Capacitacion cap = new Capacitacion();
 				cap.setId(result.getInt("id"));
@@ -38,7 +38,7 @@ public class CapacitacionManager implements CapacitacionDAO {
 		Connection conCli = ConnectionClient.getClient();
 		try {
 			Statement state = conCli.createStatement();
-			ResultSet result = state.executeQuery("SELECT id, nombre, detalle from capacitacion WHERE id = "+id);
+			ResultSet result = state.executeQuery("SELECT id, nombre, detalle from capacitaciones WHERE id = "+id);
 			while(result.next()) {
 				cap = new Capacitacion();
 				cap.setId(result.getInt("id"));
@@ -55,7 +55,7 @@ public class CapacitacionManager implements CapacitacionDAO {
 	@Override
 	public void addCapacitacion(Capacitacion cap) {
 		try {
-			ConnectionClient.getClient().createStatement().execute("INSERT INTO capacitacion (nombre, detalle) VALUES "
+			ConnectionClient.getClient().createStatement().execute("INSERT INTO capacitaciones (nombre, detalle) VALUES "
 					+ "('"+cap.getNombre()+"', '"+cap.getDetalle()+"')");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -66,7 +66,7 @@ public class CapacitacionManager implements CapacitacionDAO {
 	@Override
 	public void deleteCapacitacionById(int id) {
 		try {
-			ConnectionClient.getClient().createStatement().execute("DELETE FROM capacitacion WHERE id = "+id);
+			ConnectionClient.getClient().createStatement().execute("DELETE FROM capacitaciones WHERE id = "+id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,7 +76,7 @@ public class CapacitacionManager implements CapacitacionDAO {
 	@Override
 	public void updateCapacitacion(Capacitacion cap) {
 		try {
-			ConnectionClient.getClient().createStatement().execute("UPDATE capacitacion SET nombre = "+cap.getNombre()+", "
+			ConnectionClient.getClient().createStatement().execute("UPDATE capacitaciones SET nombre = "+cap.getNombre()+", "
 					+ "detalle = '"+cap.getDetalle()+"' WHERE id = "+cap.getId());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
