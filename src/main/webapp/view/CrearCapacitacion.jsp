@@ -14,16 +14,18 @@
 <header>
 	<jsp:include page="Menu.jsp"></jsp:include>
 </header>
-<form action="submit" method="post" class="form">
+<form action="CrearCapacitacionServlet" method="post" class="form">
 <div class="mb-3">
     <label for="nom" class="form-label">Nombre capacitación:</label>
     <input type="text" class="form-control" id="nom" placeholder="Nombre" name="nombre">
 </div>
 <div class="mb-3">
-    <label for="cap" class="form-label">Duración:</label>
-    <input type="text" class="form-control" id="cap" placeholder="Duración" name="duracion">
+    <label for="det" class="form-label">Duración:</label>
+    <textarea rows="20" cols="100" class="form-control" id="det" placeholder="Detalle" name="detalle"></textarea>
 </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
+<div class="rows">
+  	<button type="submit" class="btn btn-primary">Enviar</button>
+</div>
 </form>
 </body>
 </html>

@@ -14,16 +14,28 @@
 <header>
 	<jsp:include page="Menu.jsp"></jsp:include>
 </header>
-<form action="submit" method="post" class="form">
+<form action="CrearUsuarioServlet" method="post" class="form">
 <div class="mb-3">
     <label for="nom" class="form-label">Nombre usuario:</label>
     <input type="text" class="form-control" id="nom" placeholder="Nombre" name="nombre">
 </div>
 <div class="mb-3">
-    <label for="cap" class="form-label">Apellido usuario:</label>
-    <input type="text" class="form-control" id="cap" placeholder="Apellido" name="apellido">
+<div class="form-check">
+    <input type="radio" class="form-check-input" id="cliente" name="tipo" value="CLIENTE" checked>
+  	<label for="cliente" class="form-check-label">Cliente</label>
 </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
+<div class="form-check">
+  	<input type="radio" class="form-check-input" id="admin" name="tipo" value="ADMINISTRATIVO">
+  	<label for="admin" class="form-check-label">Administrativo</label>
+</div>
+<div class="form-check">
+  	<input type="radio" class="form-check-input" id="profe" name="tipo" value="PROFESIONAL">
+  	<label for="profe" class="form-check-label">Profesional</label>
+</div>
+</div>
+<div class="rows">
+	<button type="submit" class="btn btn-primary">Enviar</button>
+</div>
 </form>
 </body>
 </html>

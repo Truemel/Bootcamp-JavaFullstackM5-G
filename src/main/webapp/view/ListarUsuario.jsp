@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="f"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,25 @@
 	<jsp:include page="Menu.jsp"></jsp:include>
 </header>
 <h1>Usuarios Registrados</h1>
-<p class="mb-3">Usuarios</p>
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead class="table-dark">
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Tipo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<f:forEach var="u" items="${user}">
+				<tr>
+					<td><f:out value="u.getId()"></f:out></td>
+					<td><f:out value="u.getNombre()"></f:out></td>
+					<td><f:out value="u.getTipo()"></f:out></td>
+				</tr>
+			</f:forEach>
+		</tbody>
+	</table>
+</div>
 </body>
 </html>

@@ -43,6 +43,10 @@ public class Usuario {
 	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
+	
+	public void setTipo(String tipo) {
+		this.tipo = Tipo.valueOf(tipo);
+	}
 
 	@Override
 	public String toString() {

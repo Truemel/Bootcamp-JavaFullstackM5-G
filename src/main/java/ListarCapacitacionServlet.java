@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import services.CapacitacionDBService;
 
 /**
  * Servlet implementation class ListarCapacitacionServlet
@@ -14,9 +15,8 @@ import jakarta.servlet.http.HttpSession;
 public class ListarCapacitacionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    public CapacitacionDBService cap = new CapacitacionDBService();
+	
     public ListarCapacitacionServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -28,9 +28,10 @@ public class ListarCapacitacionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		if(Boolean.parseBoolean(session.getAttribute("logged")+""))
+		if(Boolean.parseBoolean(session.getAttribute("logged")+"")) {
+			request.setAttribute("capac", cap.getCapacitacionList());
 			getServletContext().getRequestDispatcher("/view/ListarCapacitacion.jsp").forward(request, response);
-		else
+		}else
 			response.sendRedirect(getServletContext().getContextPath()+"/LoginServlet");
 	}
 
