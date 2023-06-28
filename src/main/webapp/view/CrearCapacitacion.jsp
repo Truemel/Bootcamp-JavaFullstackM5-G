@@ -14,7 +14,7 @@
 <header>
 	<jsp:include page="Menu.jsp"></jsp:include>
 </header>
-<form action="CrearCapacitacionServlet" method="post" class="form">
+<form action="CrearCapacitacionServlet" method="post" name="forma" onsubmit="return validaciones()" class="form">
 <div class="mb-3">
     <label for="nom" class="form-label">Nombre capacitación:</label>
     <input type="text" class="form-control" id="nom" placeholder="Nombre" name="nombre">
@@ -27,5 +27,29 @@
   	<button type="submit" class="btn btn-primary">Enviar</button>
 </div>
 </form>
+<script type="text/javascript">
+	function validaciones(){
+		if(!validateNombre() || !validateDetalle())
+			return false;
+	}
+
+	function validateNombre(){
+		var nom = document.forms["forma"]["nombre"].value;
+		if(nom.length < 10 || nom.length > 50){
+			alert("Error, nombre mal ingresado, debe tener entre 10 y 50 caracteres");
+			return false;
+		}
+		return true;
+	}
+	
+	function validateDetalle(){
+		var det = document.forms["forma"]["detalle"].value;
+		if(det == "" || det.length > 2000){
+			alert("Error, detalle mal ingresado debe tener entre 1 y 2000 caracteres");
+			return false;
+		}
+		return true;
+	}
+</script>
 </body>
 </html>

@@ -14,7 +14,7 @@
 <header>
 	<jsp:include page="Menu.jsp"></jsp:include>
 </header>
-<form action="CrearUsuarioServlet" method="post" class="form">
+<form action="CrearUsuarioServlet" method="post" name="forma" onsubmit="return validateNombre()" class="form">
 <div class="mb-3">
     <label for="nom" class="form-label">Nombre usuario:</label>
     <input type="text" class="form-control" id="nom" placeholder="Nombre" name="nombre">
@@ -37,5 +37,14 @@
 	<button type="submit" class="btn btn-primary">Enviar</button>
 </div>
 </form>
+<script>
+	function validateNombre(){
+		var nom = document.forms["forma"]["nombre"].value;
+		if(nom.length < 10 || nom.length > 50){
+			alert("Error, nombre mal ingresado, debe tener entre 10 y 50 caracteres");
+			return false;
+		}
+	}
+</script>
 </body>
 </html>
