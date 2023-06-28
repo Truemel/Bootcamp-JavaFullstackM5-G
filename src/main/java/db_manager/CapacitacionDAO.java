@@ -2,7 +2,7 @@ package db_manager;
 
 import java.util.ArrayList;
 
-import model.Capacitacion;
+import modelo.Capacitacion;
 
 public interface CapacitacionDAO {
 	

@@ -2,7 +2,7 @@ package db_manager;
 
 import java.util.ArrayList;
 
-import model.Usuario;
+import modelo.Usuario;
 
 public interface UsuarioDAO {
 	public ArrayList<Usuario> getUsuarioList();

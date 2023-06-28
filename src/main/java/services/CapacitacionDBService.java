@@ -3,7 +3,7 @@ package services;
 import java.util.List;
 
 import db_manager.CapacitacionManager;
-import model.Capacitacion;
+import modelo.Capacitacion;
 
 public class CapacitacionDBService {
 	

@@ -1,3 +1,4 @@
+package controlador;
 
 
 import java.io.IOException;
@@ -7,18 +8,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import model.UserSession;
+import modelo.Capacitacion;
+import services.CapacitacionDBService;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class S3
  */
-public class LoginServlet extends HttpServlet {
+public class CrearCapacitacionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
+    public CapacitacionDBService cap = new CapacitacionDBService();
+	
+    public CrearCapacitacionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +29,11 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/view/Login.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+		if(Boolean.parseBoolean(session.getAttribute("logged")+""))
+			getServletContext().getRequestDispatcher("/view/CrearCapacitacion.jsp").forward(request, response);
+		else
+			response.sendRedirect(getServletContext().getContextPath()+"/LoginServlet");
 	}
 
 	/**
@@ -36,12 +41,11 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		if(UserSession.loginVerify(request.getParameter("nickname"), request.getParameter("password"))) {
-			session.setAttribute("logged", true);
-			response.sendRedirect(getServletContext().getContextPath()+"/ContactoServlet");
-		}else
-			getServletContext().getRequestDispatcher("/view/Login.jsp").forward(request, response);
+		Capacitacion capac = new Capacitacion();
+		capac.setNombre(request.getParameter("nombre"));
+		capac.setDetalle(request.getParameter("detalle"));
+		cap.addCapacitacion(capac);
+		response.sendRedirect(getServletContext().getContextPath()+"/CrearCapacitacionServlet");
 	}
 
 }

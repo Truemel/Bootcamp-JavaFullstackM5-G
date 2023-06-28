@@ -1,3 +1,4 @@
+package controlador;
 
 
 import java.io.IOException;
@@ -7,17 +8,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import services.UsuarioDBService;
+import modelo.UserSession;
 
 /**
- * Servlet implementation class ListarUsuarioServlet
+ * Servlet implementation class LoginServlet
  */
-public class ListarUsuarioServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public UsuarioDBService usu = new UsuarioDBService();
-	
-    public ListarUsuarioServlet() {
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,12 +29,7 @@ public class ListarUsuarioServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		if(Boolean.parseBoolean(session.getAttribute("logged")+"")) {
-			request.setAttribute("user", usu.getUsuarioList());
-			getServletContext().getRequestDispatcher("/view/ListarUsuario.jsp").forward(request, response);
-		}else
-			response.sendRedirect(getServletContext().getContextPath()+"/LoginServlet");
+		getServletContext().getRequestDispatcher("/view/Login.jsp").forward(request, response);
 	}
 
 	/**
@@ -40,7 +37,12 @@ public class ListarUsuarioServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		HttpSession session = request.getSession();
+		if(UserSession.loginVerify(request.getParameter("nickname"), request.getParameter("password"))) {
+			session.setAttribute("logged", true);
+			response.sendRedirect(getServletContext().getContextPath()+"/ContactoServlet");
+		}else
+			getServletContext().getRequestDispatcher("/view/Login.jsp").forward(request, response);
 	}
 
 }

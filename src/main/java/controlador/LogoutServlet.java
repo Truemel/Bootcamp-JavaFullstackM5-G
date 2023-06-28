@@ -1,3 +1,4 @@
+package controlador;
 
 
 import java.io.IOException;
@@ -8,17 +9,21 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class S1
+ * Servlet implementation class LogoutServlet
  */
-public class InicioServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InicioServlet() {
+    public LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
+    }
+    
+    public void logout() {
+    	
     }
 
 	/**
@@ -26,7 +31,8 @@ public class InicioServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/view/Inicio.jsp").forward(request, response);
+		request.getSession().setAttribute("logged", false);
+		getServletContext().getRequestDispatcher("/view/Logout.jsp").forward(request, response);
 	}
 
 	/**
@@ -34,7 +40,7 @@ public class InicioServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.sendRedirect(getServletContext().getContextPath()+"/LoginServlet");
 	}
 
 }

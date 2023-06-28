@@ -1,3 +1,4 @@
+package controlador;
 
 
 import java.io.IOException;
@@ -7,17 +8,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import modelo.Usuario;
+import services.UsuarioDBService;
 
 /**
- * Servlet implementation class S2
+ * Servlet implementation class CrearUsuarioServlet
  */
-public class ContactoServlet extends HttpServlet {
+public class CrearUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ContactoServlet() {
+    public UsuarioDBService usu = new UsuarioDBService();
+	
+    public CrearUsuarioServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,9 +31,9 @@ public class ContactoServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		if(Boolean.parseBoolean(session.getAttribute("logged")+""))
-			getServletContext().getRequestDispatcher("/view/Contacto.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/view/CrearUsuario.jsp").forward(request, response);
 		else
-			response.sendRedirect("./LoginServlet");
+			response.sendRedirect(getServletContext().getContextPath()+"/LoginServlet");
 	}
 
 	/**
@@ -39,7 +41,11 @@ public class ContactoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		Usuario user = new Usuario();
+		user.setNombre(request.getParameter("nombre"));
+		user.setTipo(request.getParameter("tipo"));
+		usu.addUsuario(user);
+		response.sendRedirect(getServletContext().getContextPath()+"/CrearUsuarioServlet");
 	}
 
 }

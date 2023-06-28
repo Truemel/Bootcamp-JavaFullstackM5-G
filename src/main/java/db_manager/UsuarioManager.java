@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import conexion.ConnectionClient;
-import model.Usuario;
-import model.Usuario.Tipo;
+import modelo.Usuario;
+import modelo.Usuario.Tipo;
 
 public class UsuarioManager implements UsuarioDAO {
 

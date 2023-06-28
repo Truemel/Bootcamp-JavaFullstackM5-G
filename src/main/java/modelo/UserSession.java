@@ -1,4 +1,4 @@
-package model;
+package modelo;
 
 public class UserSession {
 	private static final String NICKNAME = "admin";

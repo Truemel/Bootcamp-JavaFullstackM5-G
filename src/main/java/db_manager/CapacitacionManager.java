@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import conexion.ConnectionClient;
-import model.Capacitacion;
+import modelo.Capacitacion;
 
 public class CapacitacionManager implements CapacitacionDAO {
 
