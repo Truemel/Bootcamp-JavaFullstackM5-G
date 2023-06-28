@@ -1,4 +1,4 @@
-package db_manager;
+package implementacion;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import conexion.ConnectionClient;
+import interfaces.UsuarioDAO;
 import modelo.Usuario;
 import modelo.Usuario.Tipo;
 

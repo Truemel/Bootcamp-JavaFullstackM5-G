@@ -4,7 +4,7 @@
     <description></description>
     <display-name>InicioServlet</display-name>
     <servlet-name>InicioServlet</servlet-name>
-    <servlet-class>InicioServlet</servlet-class>
+    <servlet-class>controlador.InicioServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>InicioServlet</servlet-name>
@@ -23,7 +23,7 @@
     <description></description>
     <display-name>ContactoServlet</display-name>
     <servlet-name>ContactoServlet</servlet-name>
-    <servlet-class>ContactoServlet</servlet-class>
+    <servlet-class>controlador.ContactoServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ContactoServlet</servlet-name>
@@ -33,7 +33,7 @@
     <description></description>
     <display-name>CrearCapacitacionServlet</display-name>
     <servlet-name>CrearCapacitacionServlet</servlet-name>
-    <servlet-class>CrearCapacitacionServlet</servlet-class>
+    <servlet-class>controlador.CrearCapacitacionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CrearCapacitacionServlet</servlet-name>
@@ -43,7 +43,7 @@
     <description></description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>LoginServlet</servlet-class>
+    <servlet-class>controlador.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
@@ -53,7 +53,7 @@
     <description></description>
     <display-name>ListarCapacitacionServlet</display-name>
     <servlet-name>ListarCapacitacionServlet</servlet-name>
-    <servlet-class>ListarCapacitacionServlet</servlet-class>
+    <servlet-class>controlador.ListarCapacitacionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ListarCapacitacionServlet</servlet-name>
@@ -63,7 +63,7 @@
     <description></description>
     <display-name>LogoutServlet</display-name>
     <servlet-name>LogoutServlet</servlet-name>
-    <servlet-class>LogoutServlet</servlet-class>
+    <servlet-class>controlador.LogoutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LogoutServlet</servlet-name>
@@ -73,7 +73,7 @@
     <description></description>
     <display-name>CrearUsuarioServlet</display-name>
     <servlet-name>CrearUsuarioServlet</servlet-name>
-    <servlet-class>CrearUsuarioServlet</servlet-class>
+    <servlet-class>controlador.CrearUsuarioServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CrearUsuarioServlet</servlet-name>
@@ -83,7 +83,7 @@
     <description></description>
     <display-name>ListarUsuarioServlet</display-name>
     <servlet-name>ListarUsuarioServlet</servlet-name>
-    <servlet-class>ListarUsuarioServlet</servlet-class>
+    <servlet-class>controlador.ListarUsuarioServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ListarUsuarioServlet</servlet-name>

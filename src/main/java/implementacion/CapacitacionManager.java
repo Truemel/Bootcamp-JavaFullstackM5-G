@@ -1,4 +1,4 @@
-package db_manager;
+package implementacion;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import conexion.ConnectionClient;
+import interfaces.CapacitacionDAO;
 import modelo.Capacitacion;
 
 public class CapacitacionManager implements CapacitacionDAO {
@@ -83,7 +84,4 @@ public class CapacitacionManager implements CapacitacionDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	
-
 }

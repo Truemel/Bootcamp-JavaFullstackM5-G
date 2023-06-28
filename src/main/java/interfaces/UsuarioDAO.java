@@ -1,4 +1,4 @@
-package db_manager;
+package interfaces;
 
 import java.util.ArrayList;
 

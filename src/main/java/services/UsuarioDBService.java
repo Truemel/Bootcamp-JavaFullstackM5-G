@@ -2,7 +2,7 @@ package services;
 
 import java.util.ArrayList;
 
-import db_manager.UsuarioManager;
+import implementacion.UsuarioManager;
 import modelo.Usuario;
 
 public class UsuarioDBService {
