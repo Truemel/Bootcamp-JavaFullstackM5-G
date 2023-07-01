@@ -10,7 +10,7 @@
     <servlet-name>InicioServlet</servlet-name>
     <url-pattern>/InicioServlet</url-pattern>
   </servlet-mapping>
-  <display-name>Ejercicio Grupal M5</display-name>
+  <display-name>EjercicioGrupalM5</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -88,5 +88,35 @@
   <servlet-mapping>
     <servlet-name>ListarUsuarioServlet</servlet-name>
     <url-pattern>/ListarUsuarioServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarClienteServlet</display-name>
+    <servlet-name>EditarClienteServlet</servlet-name>
+    <servlet-class>controlador.EditarClienteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarClienteServlet</servlet-name>
+    <url-pattern>/EditarClienteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarProfesionalServlet</display-name>
+    <servlet-name>EditarProfesionalServlet</servlet-name>
+    <servlet-class>controlador.EditarProfesionalServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarProfesionalServlet</servlet-name>
+    <url-pattern>/EditarProfesionalServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarAdministrativoServlet</display-name>
+    <servlet-name>EditarAdministrativoServlet</servlet-name>
+    <servlet-class>controlador.EditarAdministrativoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarAdministrativoServlet</servlet-name>
+    <url-pattern>/EditarAdministrativoServlet</url-pattern>
   </servlet-mapping>
 </web-app>

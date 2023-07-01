@@ -2,3 +2,13 @@
 body {
 	background-color: ghostwhite;
 }
+
+.bordes{
+	border-style: ridge;
+	border-color: deepskyblue;
+	border-width: 3px;
+	padding: 4px;
+	text-shadow: 2px 2px 5px red;
+	font-weight: bold;
+	background-color: white;
+}

@@ -8,13 +8,14 @@
 	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
 	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<link href="view/styles.css" rel="stylesheet">
 <title>Contacto</title>
 </head>
 <body class="container">
 <header>
 	<jsp:include page="Menu.jsp"></jsp:include>
 </header>
-<form action="submit" method="post" class="form">
+<form action="ContactoServlet" method="post" class="form">
 <div class="mb-3 mt-3">
     <label for="email" class="form-label">Email:</label>
     <input type="email" class="form-control" id="email" placeholder="Email" name="email">

@@ -9,6 +9,7 @@
 	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
 	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<link href="view/styles.css" rel="stylesheet">
 <title>Listar Usuarios</title>
 </head>
 <body class="container">
@@ -31,6 +32,12 @@
 					<td><f:out value="${u.getId()}"></f:out></td>
 					<td><f:out value="${u.getNombre()}"></f:out></td>
 					<td><f:out value="${u.getTipo()}"></f:out></td>
+					<td><f:if test="${u.getTipo().name().equals('CLIENTE')}">
+					<a href="${pageContext.request.servletContext.contextPath}/EditarClienteServlet?id=${u.getId()}"><button class="btn btn-primary">Edit</button></a></f:if>
+					<f:if test="${u.getTipo().name().equals('ADMINISTRATIVO')}">
+					<a href="${pageContext.request.servletContext.contextPath}/EditarAdministrativoServlet?id=${u.getId()}"><button class="btn btn-primary">Edit</button></a></f:if>
+					<f:if test="${u.getTipo().name().equals('PROFESIONAL')}">
+					<a href="${pageContext.request.servletContext.contextPath}/EditarProfesionalServlet?id=${u.getId()}"><button class="btn btn-primary">Edit</button></a></f:if></td>
 				</tr>
 			</f:forEach>
 		</tbody>

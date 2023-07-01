@@ -1,23 +1,24 @@
 package controlador;
 
-
 import java.io.IOException;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelo.Usuario;
+import services.UsuarioDBService;
 
 /**
- * Servlet implementation class S2
+ * Servlet implementation class EditarProfesionalServlet
  */
-public class ContactoServlet extends HttpServlet {
+public class EditarProfesionalServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ContactoServlet() {
+	public UsuarioDBService usu = new UsuarioDBService();
+	private Usuario user;
+	
+    public EditarProfesionalServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +28,9 @@ public class ContactoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/view/Contacto.jsp").forward(request, response);
+		//response.sendRedirect(getServletContext().getContextPath()+"/EditarClienteServlet?idCliente=3");
+		request.setAttribute("profes", user = usu.getUsuarioById(Integer.parseInt(request.getParameter("id"))));
+		getServletContext().getRequestDispatcher("/view/EditarProfesional.jsp").forward(request, response);
 	}
 
 	/**
@@ -35,9 +38,9 @@ public class ContactoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Nombre: "+request.getParameter("nombre")+"\nEmail: "+request.getParameter("email")+"\n"
-				+ "Mensaje: "+request.getParameter("mensaje"));
-		response.sendRedirect(getServletContext().getContextPath()+"/InicioServlet");
+		user.setNombre(request.getParameter("nombre"));
+		usu.updateUsuario(user);
+		response.sendRedirect(getServletContext().getContextPath()+"/ListarUsuarioServlet");
 	}
 
 }
