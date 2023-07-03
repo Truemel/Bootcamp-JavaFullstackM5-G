@@ -1,24 +1,38 @@
 package modelo;
 
 public class Usuario {
-
-	public static enum Tipo {CLIENTE, ADMINISTRATIVO, PROFESIONAL};
 	
     private int id;
-    private String nombre;
-    private Tipo tipo;
+    private String nombre, apellido, correo, rut;
 
     public Usuario(){
         id = 0;
-        nombre = "";
-        tipo = Tipo.CLIENTE;
+        nombre = apellido = correo = rut = "";
     }
 
-    public Usuario(int id, String nombre, Tipo tipo){
+    public Usuario(int id, String nombre, String apellido, String correo, String rut){
         this.id = id;
         this.nombre = nombre;
-        this.tipo = tipo;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.rut = rut;
     }
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
 
 	public int getId() {
 		return id;
@@ -36,20 +50,17 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public Tipo getTipo() {
-		return tipo;
+	public String getRut() {
+		return rut;
 	}
 
-	public void setTipo(Tipo tipo) {
-		this.tipo = tipo;
-	}
-	
-	public void setTipo(String tipo) {
-		this.tipo = Tipo.valueOf(tipo.toUpperCase());
+	public void setRut(String rut) {
+		this.rut = rut;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", tipo=" + tipo + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", rut="
+				+ rut + "]";
 	}
 }

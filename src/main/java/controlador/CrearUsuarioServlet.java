@@ -43,7 +43,7 @@ public class CrearUsuarioServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		Usuario user = new Usuario();
 		user.setNombre(request.getParameter("nombre"));
-		user.setTipo(request.getParameter("tipo"));
+		user.setRut(request.getParameter("rut"));
 		usu.addUsuario(user);
 		response.sendRedirect(getServletContext().getContextPath()+"/CrearUsuarioServlet");
 	}
