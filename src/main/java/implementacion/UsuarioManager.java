@@ -304,7 +304,7 @@ public class UsuarioManager implements UsuarioDAO {
 		Connection conCli = ConnectionClient.getClient();
 		try {
 			conCli.createStatement().execute("UPDATE cliente SET telefono = '"+cli.getTelefono()+"', direccion = '"+
-					cli.getDireccion()+"', edad = "+cli.getEdad()+", capaci_id = "+cli.getIdCapac()+" WHERE id = "+cli.getId());
+					cli.getDireccion()+"', edad = "+cli.getEdad()+", capaci_id = "+cli.getIdCapac()+" WHERE id = "+cli.getIdCliente());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -316,7 +316,7 @@ public class UsuarioManager implements UsuarioDAO {
 		Connection conCli = ConnectionClient.getClient();
 		try {
 			conCli.createStatement().execute("UPDATE profesional SET telefono = '"+profe.getTelefono()+"', cargo = '"+
-					profe.getCargo()+"' WHERE id = "+profe.getId());
+					profe.getCargo()+"' WHERE id = "+profe.getIdProfes());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -327,7 +327,7 @@ public class UsuarioManager implements UsuarioDAO {
 	public void updateAdministrativo(Administrativo admin) {
 		Connection conCli = ConnectionClient.getClient();
 		try {
-			conCli.createStatement().execute("UPDATE administrativo SET area = '"+admin.getArea()+"' WHERE id = "+admin.getId());
+			conCli.createStatement().execute("UPDATE administrativo SET area = '"+admin.getArea()+"' WHERE id = "+admin.getIdAdmin());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
